@@ -10,6 +10,7 @@ using namespace std;
 
 class Edificio{
 public:
+
   void set_color(){
     cout << "Introduce el color: ";
     cin >> color;
@@ -22,7 +23,8 @@ public:
     return color;
   }
   string get_ubicacion(){
-    return ubicacion;
+    string x = ubicacion;
+    return x;
   }
   virtual void mostrarEdificio(){
     cout << "El color del Edificio es " << get_color();
@@ -36,6 +38,7 @@ private:
 
 class Residencial: public Edificio{
 public:
+
   void set_numeroResidentes(int x){
     numeroResidentes = x;
   }
@@ -53,7 +56,10 @@ public:
   }
 
   void mostrarEdificio(){
-    cout << "La residencia cuenta con " << numHabitaciones << " habitaciones"
+
+    cout << "La residencia color " << get_color();
+    cout << " ubicada en " << get_ubicacion();
+    cout << " cuenta con " << numHabitaciones << " habitaciones"
          << ", el numero maximo de residentes es " << numeroResidentes << endl;
     seguridad == true ? cout << "La residencia cuenta con seguridad privada" : cout << "La residencia no cuenta con seguridad privada";
     gimnasio == true ? cout << ", gimnasio propio" : cout << ",  no cuenta con gimansio propio";
@@ -68,9 +74,38 @@ private:
 
 };
 
+class Comercial: public Edificio{
+public:
+
+  void set_renta(double x){
+    renta = x;
+  }
+  void set_proteccion(bool x){
+    x = proteccion;
+  }
+  double get_renta(){
+    return renta;
+  }
+  bool get_proteccion(){
+    return proteccion;
+  }
+  void mostrarEdificio(){
+    cout << "La residencia color " << get_color();
+    cout << " ubicada en " << get_ubicacion();
+    cout << " renta mensual $" << renta << " mxn.";
+    proteccion == true ? cout << " El comercio cuenta con proteccion" : cout << " El comercio no cuenta con proteccion";
+
+  }
+private:
+  double renta;
+  bool proteccion;
+};
+
 
 int main(){
   Residencial casa1;
+  casa1.set_color();
+  casa1.set_ubicacion();
   casa1.set_numHabitaciones(4);
   casa1.set_numeroResidentes(32);
   casa1.set_gimnasio(false);
@@ -78,8 +113,12 @@ int main(){
   casa1.set_seguridad(true);
   casa1.mostrarEdificio();
 
-
-
+  Comercial comercio1;
+  comercio1.set_color();
+  comercio1.set_ubicacion();
+  comercio1.set_proteccion(false);
+  comercio1.set_renta(2500);
+  comercio1.mostrarEdificio();
 
 
   return 0;
