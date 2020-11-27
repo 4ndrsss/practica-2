@@ -125,7 +125,7 @@ public:
     cout << "La residencia color " << get_color();
     cout << " ubicada en " << get_ubicacion();
     cout << " renta mensual $" << renta << " mxn.";
-    proteccion == true ? cout << " El comercio cuenta con proteccion" : cout << " El comercio no cuenta con proteccion";
+    proteccion == true ? cout << " El comercio cuenta con proteccion\n" : cout << " El comercio no cuenta con proteccion\n";
 
   }
 private:
