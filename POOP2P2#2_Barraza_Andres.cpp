@@ -73,6 +73,38 @@ private:
   bool plusvalia;
 
 };
+class Educativo: public Edificio{
+public:
+  void set_alumnosPorSalon(int x){
+    alumnosPorSalon = x;
+  }
+  int get_alumnosPorSalon(){
+    return alumnosPorSalon;
+  }
+  void set_cicloEscolar(string x){
+    cicloEscolar = x;
+  }
+  string get_cicloEscolar(){
+    return cicloEscolar;
+  }
+  void set_tipoEscuela(string x){
+    tipoEscuela = x;
+  }
+  string get_tipoEscuela(){
+    return tipoEscuela;
+  }
+  void mostrarEdificio(){
+    cout << "La " <<  get_tipoEscuela() << " color " << get_color();
+    cout << " ubicada en " << get_ubicacion();
+    cout << " Por salon hay una cantidad de " << get_alumnosPorSalon() << " alumnos" << endl;
+    cout << "El cilco escolar es " << get_cicloEscolar() << endl;
+
+  }
+private:
+  int alumnosPorSalon;
+  string cicloEscolar;
+  string tipoEscuela;
+};
 
 class Comercial: public Edificio{
 public:
@@ -120,6 +152,13 @@ int main(){
   comercio1.set_renta(2500);
   comercio1.mostrarEdificio();
 
+  Educativo primaria;
+  primaria.set_color();
+  primaria.set_ubicacion();
+  primaria.set_alumnosPorSalon(26);
+  primaria.set_cicloEscolar("2018-2019");
+  primaria.set_tipoEscuela("primaria");
+  primaria.mostrarEdificio();
 
   return 0;
 }
