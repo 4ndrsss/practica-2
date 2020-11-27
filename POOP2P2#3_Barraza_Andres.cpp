@@ -1,12 +1,11 @@
-/* ejercicio #3*/
-/*Cree un programa donde use un archivo de cabecera donde esté la clase Trabajador. 
-Se debe ingresar mediante el teclado el sueldo mensual, sueldo por hora extra y la cantidad de 
-horas extras trabajadas para calcular el dinero que obtuvo el trabajador en un año.*/
+/* 3. Cree un programa donde use un archivo de cabecera donde esté la clase Trabajador.
+      Se debe ingresar mediante el teclado el sueldo mensual, sueldo por hora extra y la cantidad de
+      horas extras trabajadas para calcular el dinero que obtuvo el trabajador en un año.*/
 
 #include <iostream>
-#include "cabecera.h"
+#include "Cabecera.h"
 
-sing namespace std;
+using namespace std;
 
 int main(){
     int mes, horasExt, numHorasExt;
@@ -22,6 +21,6 @@ int main(){
     cin >> numHorasExt;
     cout << endl;
     Trabajador empleado(mes, horasExt, numHorasExt);
-    cout << "El sueldo anual del trabajador es: $" << obrero.sueldo() << endl;
+    cout << "El sueldo anual del trabajador es: $" << empleado.sueldo() << endl;
     return 0;
 }
